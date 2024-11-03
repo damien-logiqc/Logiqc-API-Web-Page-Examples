@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group select {
+            appearance: none; /* Remove default appearance (arrow) */
+            -webkit-appearance: none; /* Safari and Chrome */
+            -moz-appearance: none; /* Firefox */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Repair Form</h2>
+        <form id="repairForm">
+            <div class="form-group">
+                <label for="repairType">Repair type</label>
+                <select id="repairType" name="repairType" required></select>
+            </div>
+            <div class="form-group">                
+                <label for="repairItem">Item/s needing repair or maintenance</label>
+                <input type="text" id="repairItem" name="repairItem" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select id="location" name="location" required></select>
+            </div>
+            <div class="form-group">                
+                <label for="locationComment">Additional location information</label>
+                <input type="text" id="locationComment" name="locationComment">
+            </div>
+            <div class="form-group">
+                <label for="text">Description of problem</label>
+                <textarea id="text" name="text" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="immediateActionTaken">Immediate action taken</label>
+                <textarea id="immediateActionTaken" name="immediateActionTaken" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="additionalComment">Additional comments</label>
+                <textarea id="additionalComment" name="additionalComment" rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="repair.js"></script>    
+</body>
+</html>

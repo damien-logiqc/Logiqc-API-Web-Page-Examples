@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improvement Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group select {
+            appearance: none; /* Remove default appearance (arrow) */
+            -webkit-appearance: none; /* Safari and Chrome */
+            -moz-appearance: none; /* Firefox */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Improvement Form</h2>
+        <form id="improvementForm">
+            <div class="form-group">
+                <label for="typeOfIssue">Type of issue</label>
+                <select id="typeOfIssue" name="typeOfIssue" required></select>
+            </div>
+            <div class="form-group">
+                <label for="improvementSource">Source of issue</label>
+                <select id="improvementSource" name="improvementSource" required></select>
+            </div>
+            <div class="form-group">
+                <label for="origin">Origin of issue</label>
+                <select id="origin" name="origin" required></select>
+            </div>
+            <div class="form-group">                
+                <label for="externalSource">External Name</label>
+                <input type="text" id="externalSource" name="externalSource" >
+            </div>
+            <div class="form-group">
+                <label for="text">Description of issue</label>
+                <textarea id="text" name="text" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recommendation">Recommended improvement</label>
+                <textarea id="recommendation" name="recommendation" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="additionalComment">Additional comments</label>
+                <textarea id="additionalComment" name="additionalComment" rows="4" ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="improvement.js"></script>    
+</body>
+</html>

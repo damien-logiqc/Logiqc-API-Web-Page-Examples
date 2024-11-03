@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group select {
+            appearance: none; /* Remove default appearance (arrow) */
+            -webkit-appearance: none; /* Safari and Chrome */
+            -moz-appearance: none; /* Firefox */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Incident Form</h2>
+        <form id="incidentForm">
+            <div class="form-group">
+                <label for="incidentArea">Incident area</label>
+                <select id="incidentArea" name="incidentArea" required></select>
+            </div>            
+            <div class="form-group">
+                <label for="incidentPrimaryType">Incident category</label>
+                <select id="incidentPrimaryType" name="incidentPrimaryType" required></select>
+            </div>
+            <div class="form-group">
+                <label for="incidentSecondaryType">Incident subcategory</label>
+                <select id="incidentSecondaryType" name="incidentSecondaryType" required></select>
+            </div>
+            <div class="form-group">
+                <label for="buildingOrVehicleDamaged">Did the incident involve company assets/equipment/vehicles?</label>
+                <select id="buildingOrVehicleDamaged" name="buildingOrVehicleDamaged" required class="yesNoSelect"></select>
+            </div>
+            <div class="form-group">
+                <label for="alarmRaised">Alarm raised?</label>
+                <select id="alarmRaised" name="alarmRaised" required class="yesNoSelect"></select>
+            </div>
+            <div class="form-group">
+                <label for="alarmActivatedBy">Alarm activated by</label>
+                <input type="text" id="alarmActivatedBy" name="alarmActivatedBy">
+            </div>
+            <div class="form-group">
+                <label for="alarmDetails">Alarm details</label>
+                <input type="text" id="alarmDetails" name="alarmDetails">
+            </div>
+            <div class="form-group">                
+                <label for="occurrenceDate">Date and time of incident</label>
+                <input type="date" id="occurrenceDate" name="occurrenceDate" required>
+                <input type="time" id="occurrenceTime" name="occurrenceTime" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select id="location" name="location" required></select>
+            </div>
+            <div class="form-group">                
+                <label for="locationInformation">Location notes</label>
+                <input type="text" id="locationInformation" name="locationInformation">
+            </div>
+            <div class="form-group">
+                <label for="relatedRegion">Region</label>
+                <select id="relatedRegion" name="relatedRegion" required></select>
+            </div>
+            <div class="form-group">
+                <label for="text">Description of incident</label>
+                <textarea id="text" name="text" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contributingFactors">Contributing factors</label>
+                <textarea id="contributingFactors" name="contributingFactors" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="immediateActionTaken">Immediate action taken</label>
+                <textarea id="immediateActionTaken" name="immediateActionTaken" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="notes">Additional comments</label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+            </div>
+
+            <!-- Person Involved -->
+            <div class="form-group">
+                <h2>Person Involved</h2>
+            </div>            
+            <div class="form-group">
+                <label for="personType">Person type</label>
+                <select id="personType" name="personType" ></select>
+            </div>
+            <div class="form-group">                
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">                
+                <label for="reference">ID#</label>
+                <input type="text" id="reference" name="reference">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender"></select>
+            </div>
+            <div class="form-group">                
+                <label for="addressLine">Address</label>
+                <input type="text" id="addressLine" name="addressLine">
+            </div>
+            <div class="form-group">                
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+            </div>
+            <div class="form-group">                
+                <label for="state">State</label>
+                <select id="state" name="state"></select>
+            </div>
+            <div class="form-group">                
+                <label for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode">
+            </div>
+            <div class="form-group">                
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">                
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+
+
+            <!-- Injury sustained -->
+            <div class="form-group">
+                <h2>Injury Details</h2>
+            </div>   
+            <div class="form-group">
+                <label for="incidentInjuryType">Nature of injury</label>
+                <select id="incidentInjuryType" name="incidentInjuryType"></select>
+            </div>     
+            <div class="form-group">
+                <label for="incidentInjuryLocation">Location on body</label>
+                <select id="incidentInjuryLocation" name="incidentInjuryLocation"></select>
+            </div> 
+            <div class="form-group">
+                <label for="incidentInjuryClassification">Injury classification</label>
+                <select id="incidentInjuryClassification" name="incidentInjuryClassification"></select>
+            </div>              
+            <div class="form-group">
+                <label for="incidentInjuryMechanism">Mechanism of incident</label>
+                <select id="incidentInjuryMechanism" name="incidentInjuryMechanism"></select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="incident.js"></script>    
+</body>
+</html>
